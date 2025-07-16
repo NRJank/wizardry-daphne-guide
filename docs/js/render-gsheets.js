@@ -10,6 +10,18 @@ const equipmentSheet = {
     columnRange: [0, 9]
 }
 
+const equipTableWeaponsSheet = {
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRdkxkQ7MR0kOOOlPgZ666s2oFoyI5Z34y6l1hxcwHXdktXuf9OrsfhQAsINwLvCBVEfylIygj5oCAE/pub?gid=1651673786&single=true&output=csv",
+    containerElementId: "weapons-table",
+    columnRange: [2, 59]
+}
+
+const equipTableArmorSheet = {
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRdkxkQ7MR0kOOOlPgZ666s2oFoyI5Z34y6l1hxcwHXdktXuf9OrsfhQAsINwLvCBVEfylIygj5oCAE/pub?gid=139619551&single=true&output=csv",
+    containerElementId: "armor-table",
+    columnRange: [2, 59]
+}
+
 const decorators = (table) => {
     new Tablesort(table);
     addFilterDecorator(table);
@@ -18,6 +30,8 @@ const decorators = (table) => {
 document$.subscribe(() => {
     buildTableFromSheet(trustSheet, decorators);
     buildTableFromSheet(equipmentSheet, decorators);
+    buildTableFromSheet(equipTableWeaponsSheet, decorators);
+    buildTableFromSheet(equipTableArmorSheet, decorators);
 });
 
 function buildTableFromSheet({containerElementId, url, columnRange}, onPostBuild) {
