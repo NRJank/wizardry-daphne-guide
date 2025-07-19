@@ -1,7 +1,13 @@
 # Equipment Tables
 
-This table is generated from the [Wizardry Variants Equipment Table (editable)](https://docs.google.com/spreadsheets/d/1j9gmngMUitaMAESlcCNeWJ5vAdMo_-yo8KkPxiMr1ZY/edit).
+These tables are generated from the [Wizardry Variants Equipment Table (editable)](https://docs.google.com/spreadsheets/d/1j9gmngMUitaMAESlcCNeWJ5vAdMo_-yo8KkPxiMr1ZY/edit).
 
-If the table does not display correctly, try the [embedded version](./equipment-tables-embed.md).
+If the tables do not display correctly, try the [embedded version](./equipment-tables-embed.md).
 
-<div id="weapons-table">Loading…</div>
+## Weapons Table 
+
+<div id="weapons-table">Loading…d</iv>
+
+## Armor Table
+
+<div id="armor-table">Loading…</div>

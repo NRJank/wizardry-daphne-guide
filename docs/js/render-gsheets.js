@@ -30,8 +30,8 @@ const decorators = (table) => {
 document$.subscribe(() => {
     buildTableFromSheet(trustSheet, decorators);
     buildTableFromSheet(equipmentSheet, decorators);
-    buildTableFromSheet(equipTableWeaponsSheet, decorators);
-    buildTableFromSheet(equipTableArmorSheet, decorators);
+    buildTableFromSheet(equipTableWeaponsSheet, );
+    buildTableFromSheet(equipTableArmorSheet, );
 });
 
 function buildTableFromSheet({containerElementId, url, columnRange}, onPostBuild) {
