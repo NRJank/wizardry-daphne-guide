@@ -1,17 +1,11 @@
 # Elf-Pri
 
-**Race**: Elf
-
-**Gender**: Male
-
-**Type**: Dark
-
-**Personality**: Evil
-
-**Starting Class**: Priest
-
-**Class Change**: n/a
-
+**Race**: Elf  
+**Gender**: Male  
+**Type**: Dark  
+**Personality**: Evil  
+**Starting Class**: Priest  
+**Class Change**:  
 **Role**: Healing, Support, Damage
 
 ??? info "Portraits"
@@ -30,4 +24,4 @@
 
 !!! info "Discipline Skill"
     === "Elf Priest Discipline"
-        {{ get_skill_description("Elf  Priest Discipline") }}
+        {{ get_skill_description("Elf Priest Discipline") }}
