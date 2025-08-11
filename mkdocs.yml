@@ -63,6 +63,7 @@ extra_css:
   - stylesheets/admonition-warning.css
   - stylesheets/admonition-note.css
   - stylesheets/admonition-info.css
+  - stylesheets/extra.css
 extra_javascript:
   - js/tablefilter.js
   - js/table.js

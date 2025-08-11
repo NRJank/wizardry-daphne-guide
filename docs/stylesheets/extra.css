@@ -1,0 +1,8 @@
+.color-table {
+    background-color: yellow;
+}
+
+
+.md-typeset .color-table :is(td,th):not([align]) {
+    background-color: initial;
+}
