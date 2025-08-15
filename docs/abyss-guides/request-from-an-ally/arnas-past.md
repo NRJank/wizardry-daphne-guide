@@ -35,11 +35,13 @@
 The boss will be accessible with the malefic key on the top left room of the 3rd floor. They will just be standing there behind the coffin.
 
 ### Boss Details
-- The boss will initially summon 2 dark succubi alongside him and cast Makaltu on himself and his allies.
-- He will summon the succubi again and buff one more time. The third time he will summon 2 greater demons and Makaltu + Cortu on everyone.
-- The boss has around 35k HP total.
+- It is possible to get iniative in this boss fight.
+- The boss will initially summon 2 Dark Succubi alongside him and cast Makaltu on himself and his allies. Each Dark Succubi have around 5k HP each. They typically use charm, mazelos, and OD suction.
+- The boss will summon the Dark Succubi again and buff everyone at around 15-17k HP dealt to it. It will summon two Greater Demons in the back row at around 25k-26k HP dealt. The Greater Demons have their typical movepool. They also have around 7k HP each.
+- If you take too long to get to the next HP threshold, the boss will re-summon the succubi if you have already killed them.
+- The boss has around 36-37k HP total. It also has extremely high surety evasion (100+).
 - The boss hits extremely hard and gets to move twice per turn. He will usually use a typical greater demon moveset.
-- The boss can cast Demonic Hand Of Chaos any turn, which is a full party confusion. It is recommended to cast kinapic on both rows if possible.
+- The boss can uniquely cast Demonic Hand Of Chaos during any of their turns, which is a full party confusion.
 - The boss can be respawned by cursed wheeling. 
 
 ### Boss Rewards
@@ -49,3 +51,7 @@ The boss will be accessible with the malefic key on the top left room of the 3rd
 There will also be a chest drop for 5 Azure Lustrous ore and 3 Separation Rare Five Blossom Junk.
 
 ![](./img/arna-cave-rare-junk.png)
+
+There is also a chance of it dropping this unique accessory
+
+![](./img/bracelet-of-sealed-battle.png)
