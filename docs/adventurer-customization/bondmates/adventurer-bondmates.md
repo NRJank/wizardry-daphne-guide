@@ -20,7 +20,7 @@
 
 | Bondmate     | Increased Attribute |
 | ------------ | ------------------- |
-| Abenius      |                     |
+| Abenius      | STR                 |
 | Adam         |                     |
 | Aldric       | DEX                 |
 | Alex         | VIT                 |
@@ -33,7 +33,7 @@
 | Beast-Thi    | DEX                 |
 | Benjamin     | STR                 |
 | Berkanan     | STR                 |
-| Bugen        |                     |
+| Bugen        | STR                 |
 | Chloe        | STR                 |
 | Clarissa     | STR                 |
 | Daniel       | STR                 |
@@ -67,7 +67,7 @@
 | Olive        | VIT                 |
 | Ophelia      | STR                 |
 | Phillip      | SPD                 |
-| Red Beard    |                     |
+| Red Beard    | PIE                 |
 | Rinne        |                     |
 | Savia        |                     |
 | Shelirionach |                     |
