@@ -26,7 +26,7 @@
 | Alex         | VIT                 |
 | Alice        |                     |
 | Amelia       | SPD                 |
-| Arboris      |                     |
+| Arboris      | DEX                 |
 | Asha         | IQ                  |
 | Bakesh       | DEX                 |
 | Barbara      | STR                 |
@@ -62,6 +62,7 @@
 | Jean         | DEX                 |
 | Kiriha       | DEX                 |
 | Lanaville    | VIT                 |
+| Livana       |                     |
 | Marianne     | PIE                 |
 | Milana       | DEX                 |
 | Olive        | VIT                 |
