@@ -16,7 +16,7 @@ Purple Gems can only be obtained through one of the purchase methods mentioned a
 | [Weekly Web Store free gems](https://store.wizardry.info) | Weekly    |  50    | 200           | 
 | Guild Regular (Today's) Supplies                          | Biweekly  |  200   | 400           | 
 |                                                           |           |        | ----          | 
-| Monthly Total                                             |           |        | 2300          | 
+| Total                                             |           |        | 2300          | 
 
 #### Optional Gems
 | Source                                             | Frequency | Amount | Monthly Total | 
@@ -73,7 +73,7 @@ Guild points (blue tokens) are granted for completing activities at the Adventur
 | Weekly Mission Completion                                 | Weekly    |  600   | 2400                      | 
 | Guild Regular (Today's) Supplies                          | Biweekly  |  200   | 400                       | 
 |                                                           |           |        | ----                      | 
-| Monthly Total                                             |           |        | 4000                      | 
+| Total                                             |           |        | 4000                      | 
 
 ### Uses
 Guild points can be exchanged at the Jeweler for gems, adventurer remains, gold, and items, most useful items below. 
@@ -103,7 +103,7 @@ In this game, adventurer remains are used by the Masked Adventurer to resurrect 
 | [Impregnable Fortress Abyss Monthly Respawning Remains](../tools/tracker.md)       | Monthly   |  1     | 1             | 
 | [Crucible Mausoleum](../abyss-guides/ancient-mausoleum/maps.md) Respawning Remains | Biweekly  |  4-5   | 8-10          | 
 |                                                                                  |           |        | -----         | 
-| Monthly Total                                                                    |           |        | 35-37         | 
+| Total                                                                    |           |        | 35-37         | 
 
 #### Optional Adventurer Remains                                        
 | Source                                        | Frequency  | Amount | Monthly Total     | 
@@ -147,7 +147,7 @@ As this table shows. the required number of tags for each grade grows quickly an
 | Guild Regular (Today's) Supplies             | Biweekly  |  2     | 4             | 
 | Weekly "Slay Dangerous Monsters" request     | Weekly    |  4     | 16            |
 |                                              |           |        | ----          |
-| Monthly Total                                |           |        | 20            | 
+| Total                                |           |        | 20            | 
 
 #### Irregular Guild Tags
 | Source                                    | Frequency | Amount    |
@@ -155,21 +155,22 @@ As this table shows. the required number of tags for each grade grows quickly an
 | "Urgent" Slay Dangerous Monsters Events    | ~ 1-2 Months | 10-15 |
 
 #### Optional Guild Tags
-Guild tags can be obtained by dismissing (retiring) adventurers from the guild.  
+Guild tags can be obtained by dismissing (retiring) adventurers from the guild. [See full details in the FAQ](../frequently-asked-questions.md#how-do-i-get-grade-tags). 
 
-| Adventurer Type | Tags received on dismissal |
+| <em>Ungraded</em> Adventurer Type | Tags received on dismissal |
 |:---:|:---:|
-| Anonymous | 1 |
-| General | 2 | 
-| Legendary | 4 | 
+| Anonymous | 1 Ungraded|
+| General | 2 Ungraded| 
+| Legendary | 1 Iron Grade, 1 Ungraded (5 Ungraded equivalent)| 
 
-Thus at high grades, dismissing extra adventurers may be necessary or collecting enough Guild Tags.  Using the numbers of regular adventurers remains available as described above, the available tags are: 
+Thus at high grades, dismissing extra adventurers may be necessary or collecting enough Guild Tags to advance.  Using the numbers of regularly available  adventurers remains as described above, the available tags are: 
 
-| Remains  | Tags from 36 Remains |
+| Remains  | Tags from dismissing 36 Ungraded Remains |
 |:---:|:---:|
 | All Anonymous | 36 |
 | All General | 72 | 
-| All Legendary | 144 | 
+| All Legendary | 36 ungraded, 36 iron | 
+<!--
 | *Expected Value<sup>†††</sup>* | *57.6* |   
 
 <small><sup>†††</sup> using the standard adventurer remains drop rates: Anon:50%, General:45%, Legend:5%.</small>
@@ -177,3 +178,4 @@ Thus at high grades, dismissing extra adventurers may be necessary or collecting
 - From this we see that a total of about 78 tags directly and from dismissed adventurers could be obtained monthly through regular means.  
 - It would take a party of six adventurers a bit over a month using all free, regular tags and remains to accumulate the 90 tags needed for Steel grade.  
 - Also using gems, ...
+-->
