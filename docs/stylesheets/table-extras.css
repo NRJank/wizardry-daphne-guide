@@ -1,3 +1,41 @@
 .nofilter-table {}  /*placeholder style to enable disabling table filter*/
 
 .nosort-table {}    /*placeholder style to enable disabling table sorting*/
+
+.fit-content-table {
+  table-layout: auto !important;
+  width: auto !important;
+}
+
+.fit-content-table th,
+.fit-content-table td {
+   width: 1% !important;
+   white-space:nowrap !important;
+   padding: 0px !important;
+   margin: 0px !important;
+
+
+.md-typeset .fit-content-table :is(td,th):not([align]) {
+    width: initial;
+    white-space:initial;
+    padding: initial; 
+    margin: initial;
+}
+
+
+/*
+.narrow-table ,
+.narrow-table th,
+.narrow-table td {
+    
+    padding:0px 0px !important; 
+    margin:0 !important;
+}
+
+.md-typeset .narrow-table :is(td,th):not([align]) {
+    padding: initial; 
+    margin: initial;
+}
+
+
+*/
