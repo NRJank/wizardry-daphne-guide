@@ -224,7 +224,9 @@
   <p>
     Click an entry name to view its image (if it has one).<br>
     Click “Collect” to record it, “Update” to overwrite, or “⟲” to undo.<br>
-    Transfer acquisition status between devices with the sync code.
+    Transfer acquisition status between devices with the sync code.<br>
+    <br>
+    Note: Some Abyss maps have variations where sections are shifted or swapped. Items located on these sections will shift as well but will remain in the same relative location in that section. If an item (x,y) location doesn't match your current map, refer to the appropriate Abyss Dungeon Maps to see which variations may be relevant.
   </p>
 
   <!-- This is where the sync UI (copyable code + paste-to-sync) appears -->
@@ -339,8 +341,15 @@
       },
       {
         id: 'b3f_goblin_south',
-        title: 'Adventurers Remains: B3F (Goblin’s Nest)',
-        details: 'Wheel to Kings Rescue and head to the location',
+        title: 'Adventurers Remains: B3F (Goblin’s Nest - chest)',
+        details: 'Wheel to Kings Rescue and head to the chest location south of the Goblin Nest entrance',
+        image: '../img/bones/respawning-bone-goblin-den.jpg',
+        clickable: true
+      },
+      {
+        id: 'b3f_goblin_northeast',
+        title: 'Adventurers Remains: B3F (Goblin’s Nest - Goblin Boss)',
+        details: 'Wheel to Kings Rescue and head to the goblin fight in the northeast',
         image: '../img/bones/respawning-bone-goblin-den.jpg',
         clickable: true
       },
@@ -416,6 +425,13 @@
         clickable: false
       },
       {
+        id: 'abyss_b5f_resistance',
+        title: 'Ring of Resistance',
+        details: 'Chest in B3F (x:12, y:19)',
+        image: '',
+        clickable: false
+      },
+      {
         id: 'abyss_b4f_halberd',
         title: 'Halberd',
         details: 'Chest in B4F (x:2, y:13)',
@@ -437,13 +453,6 @@
         clickable: false
       },
       {
-        id: 'abyss_b5f_resistance',
-        title: 'Ring of Resistance',
-        details: 'Chest in B5F (x:8, y:4)',
-        image: '',
-        clickable: false
-      },
-      {
         id: 'bracelet_of_impurity',
         title: 'Bracelet of Impurity',
         details: 'Chest in B8F (x:0, y:22)',
@@ -454,6 +463,13 @@
         id: 'bracelet_of_urgency',
         title: 'Bracelet of Urgency',
         details: 'Quest Reward from "Knight-Butcher Ent Proliferation"',
+        image: '',
+        clickable: false
+      },
+      {
+        id: 'undead_ward',
+        title: 'Undead Ward',
+        details: 'Quest Reward from "Abyssal Heretic"',
         image: '',
         clickable: false
       },
@@ -564,13 +580,6 @@
         clickable: false
       },
       { subheader: 'Impregnable Fortress' },
-      {
-        id: 'undead_ward',
-        title: 'Undead Ward',
-        details: 'Quest Reward from "Abyssal Heretic"',
-        image: '',
-        clickable: false
-      },
       {
         id: 'skull_necklace',
         title: 'Skull Necklace',

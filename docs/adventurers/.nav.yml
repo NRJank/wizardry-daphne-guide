@@ -1,7 +1,7 @@
 nav:
   - Adventurer Quicklist: './adventurer-quicklist.md'
   - Legendary Adventurers:
-    - Adventurer Review Disclaimer: './legendary-adventurers/details/_adventurer-review-disclaimer.md'
+    - Adventurer Review Criteria: './legendary-adventurers/details/_adventurer-review-criteria.md'
     - Abenius:
         - Details: './legendary-adventurers/details/Abenius.md'
         - Life Story: './legendary-adventurers/life-stories/Abenius.md'
@@ -62,6 +62,12 @@ nav:
     - Yekaterina:
         - Details: './legendary-adventurers/details/Yekaterina.md'
         - Life Story: './legendary-adventurers/life-stories/Yekaterina.md'
+    - Yuzunamiki:
+        - Details: './legendary-adventurers/details/Yuzunamiki.md'
+        - Life Story: './legendary-adventurers/life-stories/Yuzunamiki.md'
+
+  
+  
   - Legendary Requests:
     - Adam - Unnamed Request: './legendary-adventurers/legendary-requests/adam/adam-request.md'
     - Debra - Investigate the Island of Ghosts: './legendary-adventurers/legendary-requests/debra/debra-request.md'

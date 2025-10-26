@@ -162,9 +162,10 @@ Your stats page power is calculated through the following formula, which factors
 ### Power Formula
 
 !!! note
-    The formula has been updated now that we have another tier of gear to look at, and it appears to be correct for both Ebonsteel tier gear and lower. 
+    The formula has been updated now that we have another tier of gear to look at, and it appears to be correct for both Ebonsteel tier gear and lower.
+    This formula has also been updated and simplified to incorporate the new `Strength+` calculations. 
 
-`StatsPagePowerValue = SpecialCeiling(MainStat * ClassMod * Sum(%BlessingValues)) + Sum(ScalarBlessingValues) + Sum(ScalarEquipmentValues) + Sum(ScalarSkillValues) + Sum(ScalarTraitMods)`
+`StatsPagePowerValue = (SpecialCeiling(TraitPoint * ClassMod * Sum(%BlessingValues)) + Sum(ScalarBlessingValues)) * (1 + Strength+WeaponMod) + Sum(OtherValues)`
 
 ### Power Formula Variable Definitions
 * `StatsPagePowerValue` is the final power value you see displayed on the stats page.
@@ -172,23 +173,219 @@ Your stats page power is calculated through the following formula, which factors
     * For example, if you have a Fighter with `51` Strength, the naked, skill-less attack power is `62` instead of the expected `61.2` or even `61` as normal rounding would work. This is the same value you get if you completely unequip a character, then subtract the parenthesized value on the stats page.
     * Continuing the example above, if I completely unequip my Fighter MC, his Strength shows `51(+0)` on the stats page, while his Attack Power shows `93(+31)` on the stats page. Subtracting the `31` from the `93` gives us the `62` that matches `Ceiling(51*1.2)`.
         * This does mean that when reading your stats page, a value of `93(+31)` simply says that `31` points of those `93` total points came from skills. It does not mean that you add the `31` to the `93`. Weird, right?
-* `MainStat` is `Strength`, `IQ`, or `Piety`, depending on if you're trying to calculate `Attack Power`, `Magic Power`, or `Divine Power` respectively.
+* `TraitPoint` is `Strength`, `IQ`, or `Piety`, depending on if you're trying to calculate `Attack Power`, `Magic Power`, or `Divine Power` respectively.
 * `ClassMod` is based on the stats chart above. As an example, Fighters have a `ClassMod` for `Strength` of `1.2`.
 * `Sum(%BlessingValues)` is self-explanatory, but it's the addition of all percentage (example `ATK+19%`) blessing values from your equipment.
 * `Sum(ScalarBlessingValues)` is self-explanatory, but it's the addition of all scalar (example `ATK+11`) blessing values from your equipment.
-* `Sum(ScalarEquipmentValues)` is the summation of the baseline power value of all your equipment. For example, this value is `118` for a `+15 Steel Two-Handed Spear`.
-* `Sum(ScalarSkillValues)` is the sum of all stat values from skills. This ultimately just that parenthesized value on your stats page, and it does adjust automatically to factor in conditional skills such as `2h Weapon Proficiency`.
-    * `Priest Weapon Mastery` falls under this category and is already calculated and displayed for you in the parenthesized value. This calculation adds `PIE * 0.2` to Attack Power
-* `Sum(ScalarTraitMods)` is the final component and unique. In most cases, this value will be `0`, but this captures additional bonuses like `Strength+` and `I.Q. Conversion`. Note that due to these factoring in the class multiplier, these are also subject to the `SpecialCeiling` rounding.
-    * `Strength+` - see table below.
-    * `I.Q. Conversion` adds `I.Q. * 0.2` rounded down.
-    * `Nimble Strike` appears to be `DEX * 0.1` rounded down.
+* `Sum(OtherValues)` is pretty much everything else that increases the stat. Examples of this are:
+    * The flat, non-blessing values found on equipment, including a weapon's attack/magic power.
+    * Stat values from passive skills such as `2h Weapon Proficiency` or `Priest Weapon Mastery`. This is largely just the parenthesized value on your stats page, but see below for the oddity with Strength+.
+        * `Priest Weapon Mastery` adds a rounded `PIE * 0.2` to Attack Power.
+    * Stat values from passive weapon properties such as `I.Q. Conversion`.
+        * `I.Q. Conversion` adds a rounded `IQ * 0.2` to Attack Power.
 
 ### Strength+
 
-Strength+ is a unique property that appears on 2h weapons that adds a portion of the adventurer's STR value to the attack power. This value factors in the Strength trait, the class multiplier, and a scalar value that changes based on the "tier" of the weapon.
+Strength+ is a unique property that appears on 2h weapons that adds a portion of the adventurer's STR value to the attack power. This value factors in the Strength trait, the class multiplier, all blessings, and a scalar value that changes based on the "tier" of the weapon. It shows up in parentheses as an additive component, however it doesn't show the full additive value because that would make too much sense. Instead, it only shows the `STR * ClassMod * WeaponMod` value.
 
-| Weapon Tier    | Attack Power from Strength+ |
-| -------------- | --------------------------- |
-| Steel or Lower | STR * ClassMod * 0.75       |
-| Ebonsteel      | STR * ClassMod * 1          |
+| Weapon Tier    | Strength+ Weapon Mod | ParenthesizedVisibleValue |
+| -------------- | -------------------- | ------------------------- |
+| Steel or Lower | 0.75                 | STR * ClassMod * 0.75     |
+| Ebonsteel      | 1                    | STR * ClassMod * 1        |
+
+## Resistance
+
+!!! warning "The information about resistance is not exact, what we know is gathered through empirical evidence"
+
+Resistance is a stat that contributes to resisting status effects. There are two main sources of resistance, which is the RES stat itself and Tolerances that come from passive skills and gear.
+
+All info in this section credited to: [名はある冒険犬柴丸](https://www.youtube.com/@名はある冒険犬柴丸)
+
+### Resistance Formula
+
+![](./img/res-formula.png)
+
+- Estimated formula, not exact calculations. End result is probably multiplicative to the base chance of status affliction application.
+- RES stat has very high diminishing returns relative to effort obtaining RES. 
+- RES and Tolerance are multiplicative to each other (50% from RES and 50% from Tolerance = 75% reduction in status affliction chance)
+- Fortitude Adjustment is a flat additive chance added to status affliction chance after multipliers.
+
+### Estimated Tolerances
+
+=== "Skill-Bind Tolerance"
+
+    |        Name                                  |     Type               |     Base %     |   % Increase Per Level   |
+    | -------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Gessi                                        |  Bondmate              |     15 (lvl 5) |          ?               |
+    | Featherbronze Gauntlets                      |  Equipment             |      30        |          N/A             |
+    | Protection Charm                             |  Equipment             |      30        |          N/A             |
+    | Master Armor                                 |  Gacha Equipment       |      ?         |          N/A             |
+    | Prediction Hood                              |  Gacha Equipment       |      ?         |          N/A             |
+    | Honest Living (Olive)                        |  Adventurer Passive    |      50        |          N/A             |
+    | Apostle of Breaking Commandments (Red Beard) |  Adventurer Passive    |     70-80      |          N/A             |
+    | Future Dreamt With the Skull (Yekaterina)    |  Adventurer Discipline |      25        |          5               |
+    | Bind Tolerance Up (Mind)                     |  Well of Mind          |      30        |          3-4             |
+    | Bind Resistance                              |  Harken Blessing       |      30        |          N/A             |
+
+=== "Curse Tolerance"
+
+    |        Name                                  |     Type               |     Base %     |   % Increase Per Level   |
+    | -------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Ring of Spellbreaking                        |  Equipment             |      20        |          N/A             |
+    | Honest Living (Olive)                        |  Adventurer Passive    |      50        |          N/A             |
+    | Salvation through Wealth (Marianne)          |  Adventurer Discipline |      20        |          5               |
+    | Curse Tolerance Up (Mind)                    |  Well of Mind          |      30        |          3-4             |
+
+=== "Stone Tolerance"
+
+    |        Name                                  |     Type               |     Base %     |   % Increase Per Level   |
+    | -------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Graham, Knight Commander of Guarda           |  Bondmate              |      ?         |           ?              |
+    | Goatskin Cloak                               |  Equipment             |      ?         |          N/A             |
+    | Master Armor                                 |  Gacha Equipment       |      ?         |          N/A             |
+    | Compassionate Apothecary (Asha)              |  Adventurer Passive    |      50        |          N/A             |
+    | Blessing of Insta-Kill/Stone Tolerance       |  Harken Blessing       |      30        |          N/A             |
+    | Memory of Bordaon's Battle                   |  Harken Blessing       |      30        |          N/A             |
+
+=== "Charm Tolerance"
+
+    |        Name                                             |     Type               |     Base %     |   % Increase Per Level   |
+    | ------------------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Brita                                                   |  Bondmate              |     20 (lvl 5) |          ?               |
+    | Circlet                                                 |  Equipment             |      30        |          N/A             |
+    | Light Helmet of Separation                              |  Equipment             |      20        |          N/A             |
+    | Light Gauntlets of Separation                           |  Equipment             |      20        |          N/A             |
+    | Heat Haze Light Armor Boots                             |  Equipment             |      20        |          N/A             |
+    | Elegant Dancer                                          |  Equipment             |      20        |          N/A             |
+    | Oath of Fortitude (Clarissa)                            |  Adventurer Passive    |      50        |          N/A             |
+    | Warrior Princess of Resolution and Love (Lanavaille)    |  Adventurer Discipline |      25        |          5               |
+    | Flawlessly Composed Warrior Princess (Lanavaille)       |  Adventurer Discipline |      25        |          5               |
+    | Blessing of Owen (Abenius)                              |  Adventurer Discipline |      25        |          5               |
+    | Charm Tolerance Up (Mind)                               |  Well of Mind          |      30        |          3-4             |
+    | Blessing of Confusion/Charm Tolerance                   |  Harken Blessing       |      30        |          N/A             |
+    | Memory of Bordaon's Battle                              |  Harken Blessing       |      30        |          N/A             |
+
+=== "Confuse Tolerance"
+
+    |        Name                                             |     Type               |     Base %     |   % Increase Per Level   |
+    | ------------------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Gigi                                                    |  Bondmate              |     10 (lvl 1) |          N/A             |
+    | Eugen and Bibi                                          |  Bondmate              |     27 (lvl 5) |           ?              |
+    | Circlet                                                 |  Equipment             |      30        |          N/A             |
+    | Light Helmet of Separation                              |  Equipment             |      20        |          N/A             |
+    | Light Gauntlets of Separation                           |  Equipment             |      20        |          N/A             |
+    | Heat Haze Light Armor Boots                             |  Equipment             |      20        |          N/A             |
+    | Mauve Shield                                            |  Equipment             |      30        |          N/A             |
+    | Oath of Fortitude (Clarissa)                            |  Adventurer Passive    |      50        |          N/A             |
+    | Warrior Princess of Resolution and Love (Lanavaille)    |  Adventurer Discipline |      25        |          5               |
+    | Flawlessly Composed Warrior Princess (Lanavaille)       |  Adventurer Discipline |      25        |          5               |
+    | Blessing of Owen (Abenius)                              |  Adventurer Discipline |      25        |          5               |
+    | Confusion Tolerance Up (Mind)                           |  Well of Mind          |      30        |          3-4             |
+    | Blessing of Confusion/Charm Tolerance                   |  Harken Blessing       |      30        |          N/A             |
+    | Memory of Bordaon's Battle                              |  Harken Blessing       |      30        |          N/A             | 
+
+=== "Paralysis Tolerance"
+
+    |        Name                                             |     Type               |     Base %     |   % Increase Per Level   |
+    | ------------------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Royal Knight Albano                                     |  Bondmate              |     10 (lvl 5) |           ?              |
+    | Head Cook                                               |  Bondmate              |     17 (lvl 5) |           ?              |
+    | Plague Mask                                             |  Equipment             |      30        |          N/A             |
+    | Bracelet of Impurity                                    |  Equipment             |      40        |          N/A             |
+    | Compassionate Apothecary (Asha)                         |  Adventurer Passive    |      50        |          N/A             |
+    | Blessing of the Beast God (Debra)                       |  Adventurer Discipline |      25        |          5               |
+    | Paralysis Tolerance Up (Mind)                           |  Well of Mind          |      30        |          3-4             |
+    | Blessing of Poison Paralysis                            |  Harken Blessing       |      30        |          N/A             |
+    | Abductor of Kings                                       |  Harken Blessing       |      30        |          N/A             |
+
+=== "Sleep Tolerance"
+
+    |        Name                                             |     Type               |     Base %     |   % Increase Per Level   |
+    | ------------------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Doris, the Frightened Maid                              |  Bondmate              |     20 (lvl 5) |           ?              |
+    | Melgina                                                 |  Bondmate              |     17 (lvl 5) |           ?              |
+    | Sam the Rascally Dog                                    |  Bondmate              |      12        |           2              |
+    | Pearl of the Sea God                                    |  Equipment             |      20        |          N/A             |
+    | Circlet                                                 |  Equipment             |      30        |          N/A             |
+    | Bracelet of Urgency                                     |  Equipment             |      50        |          N/A             |
+    | Nameless Loyalty (Eldorado)                             |  Adventurer Passive    |      50        |          N/A             |
+    | Cold-Blooded Elf (Elda)                                 |  Adventurer Discipline |      20        |          5               |
+    | Sleep Tolerance Up (Mind)                               |  Well of Mind          |      30        |          3-4             |
+    | Blessing of Unsleeping Will                             |  Harken Blessing       |      30        |          N/A             |
+    | Bind Rejecting Immunity                                 |  Harken Blessing       |      30        |          N/A             |
+    | Mermaid Aboard the Ship                                 |  Harken Blessing       |      30        |          N/A             |
+    | Memory of Bordaon's Battle                              |  Harken Blessing       |      30        |          N/A             |
+
+=== "Poison Tolerance"
+
+    |        Name                                             |     Type               |     Base %     |   % Increase Per Level   |
+    | ------------------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Willful Theo                                            |  Bondmate              |     20 (lvl 5) |           ?              |
+    | Songstress Marin                                        |  Bondmate              |     17 (lvl 5) |           ?              |
+    | Plague Mask                                             |  Equipment             |      30        |          N/A             |
+    | Antivenom Shield                                        |  Equipment             |      50        |          N/A             |
+    | Bracelet of Impurity                                    |  Equipment             |      40        |          N/A             |
+    | Compassionate Apothecary (Asha)                         |  Adventurer Passive    |      50        |          N/A             |
+    | Apothecary's Knowledge (Asha)                           |  Adventurer Discipline |      20        |          5               |
+    | Hot-Blooded Adventurer (Gaston)                         |  Adventurer Discipline |      20        |          5               |
+    | Poison Tolerance Up (Mind)                              |  Well of Mind          |      30        |          3-4             |
+    | Poison Resistance Blessing                              |  Harken Blessing       |      30        |          N/A             |
+    | Blessing of Poison Paralysis                            |  Harken Blessing       |      30        |          N/A             |
+    | Abductor of Kings                                       |  Harken Blessing       |      30        |          N/A             |
+    | Dwarf Race                                              |  Race                  |      20        |          N/A             |
+
+=== "Fear Tolerance"
+
+    |        Name                                             |     Type               |     Base %     |   % Increase Per Level   |
+    | ------------------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Caterwaul Crew                                          |  Bondmate              |     20 (lvl 5) |           ?              |
+    | Pearl of the Sea God                                    |  Equipment             |      20        |          N/A             |
+    | Peony Hair Ornament                                     |  Gacha Equipment       |      ?         |          N/A             |
+    | Breastplate of Hope                                     |  Gacha Equipment       |      ?         |          N/A             |
+    | Renegade's Sabatons                                     |  Gacha Equipment       |      ?         |          N/A             |
+    | Oath of Fortitude (Clarissa)                            |  Adventurer Passive    |      50        |          N/A             |
+    | Honest Living (Olive)                                   |  Adventurer Passive    |      50        |          N/A             |
+    | Unstoppable Curiosity (Dino)                            |  Adventurer Discipline |      20        |          5               |
+    | Fear Tolerance Up (Mind)                                |  Well of Mind          |      30        |          3-4             |
+    | Blessing of Unsleeping Will                             |  Harken Blessing       |      30        |          N/A             |
+    | Abductor of Kings                                       |  Harken Blessing       |      30        |          N/A             |
+    | Beastfolk Race                                          |  Race                  |      20        |          N/A             |
+
+=== "Stun Tolerance"
+
+    |        Name                                             |     Type               |     Base %     |   % Increase Per Level   |
+    | ------------------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Harry, the Wandering Adventurer                         |  Bondmate              |      ?         |           ?              |
+    | Kidnapped Girl Liam                                     |  Bondmate              |      ?         |          N/A             |
+    | Plague Mask                                             |  Equipment             |      30        |          N/A             |
+    | Goddess's Earrings                                      |  Equipment             |      ?         |          N/A             |
+    | Nameless Loyalty (Eldorado)                             |  Adventurer Passive    |      50        |          N/A             |
+    | Knight's Creed (Eckart)                                 |  Adventurer Discipline |      20        |          5               |
+    | Solid Devotion (Eldorado)                               |  Adventurer Discipline |      20        |          5               |
+    | Stun Tolerance Up (Mind)                                |  Well of Mind          |      30        |          3-4             |
+    | Memory of Bordaon's Battle                              |  Harken Blessing       |      30        |          N/A             |
+
+=== "Instakill Tolerance"
+
+    |        Name                                             |     Type               |     Base %     |   % Increase Per Level   |
+    | ------------------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Concerned Brother Elequon                               |  Bondmate              |      ?         |           ?              |
+    | Helmet of Malice                                        |  Equipment             |      ?         |          N/A             |
+    | Skull Necklace                                          |  Equipment             |      ?         |          N/A             |
+    | Shining Finger Band                                     |  Equipment             |      ?         |          N/A             |
+    | Faith of the Wicked (Galina)                            |  Adventurer Passive    |      50        |          N/A             |
+    | Apostle of Breaking Commandments (Red Beard)            |  Adventurer Passive    |      70-80     |          N/A             |
+    | Instakill Tolerance Up (Mind)                           |  Well of Mind          |      30        |          3-4             |
+    | Blessing of Instakill/Stone Tolerance                   |  Harken Blessing       |      30        |          N/A             |
+
+=== "Critical Tolerance"
+
+    |        Name                                             |     Type               |     Base %     |   % Increase Per Level   |
+    | ------------------------------------------------------- | ---------------------- | -------------- | ------------------------ |
+    | Beheading Bunny                                         |  Bondmate              |      ?         |           ?              |
+    | Safety Ring                                             |  Equipment             |      ?         |          N/A             |
+    | Rabbit Talisman                                         |  Gacha Equipment       |      ?         |          N/A             |
+    | Faith of the Wicked (Galina)                            |  Adventurer Passive    |      50        |          N/A             |
+    | Apostle of Breaking Commandments (Galina)               |  Adventurer Discipline |      20        |          5               |
+    | Flawlessly Composed Warrior Princess (Lanavaille)       |  Adventurer Discipline |      25        |          5               |
+    | Abductor of Kings                                       |  Harken Blessing       |      30        |          N/A             |

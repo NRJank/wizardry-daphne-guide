@@ -155,11 +155,16 @@
 
 3. Witness his final moments on B7F.
 
-??? map "B7F Location 1"
-    ![](img/image_42.jpg)
+??? map "B7F Locations"
 
-??? map "B7F Location 2"
-    ![harry-b7f-2.jpg](img/harry-b7f-2.jpg)
+    === "Map Variation 1"  
+        ![harry_b7f_1.jpg](img/harry_b7f_1.jpg)  
+
+    === "Map Variation 2"  
+        ![harry_b7f_2.jpg](img/harry_b7f_2.jpg)  
+
+    === "Old location (likely a bug)"  
+        ![harry_b7f_old.jpg](img/harry_b7f_old.jpg)  
 
 !!! note "To farm, Cursed Wheel to Second Major Harken and then start from Step 1."
 

@@ -70,9 +70,18 @@ The 2nd part requires you to select only 1 adventurer to bring with you and walk
 
     ![](img/ninja-knowledge.jpg)
 
+!!! note "After the 1st Anniversary update, you can now exchange tokens for unlimited amounts of event specific junk!"
+
 
 === "Merc's Route"
     ![](img/farming/merc.jpg)
 
 === "SocialX's Route"
     ![](img/farming/social-farm.jpg)
+
+=== "No Boss Farming Route Full Clear - Zellwëger"
+    ![](img/ssc-farm-no-boss-1.png)
+    ![](img/ssc-farm-no-boss-2.png)
+    ![](img/ssc-farm-no-boss-3.png)
+
+    To do the farm, please follow the arrows from the entrance and the corresponding numbers
