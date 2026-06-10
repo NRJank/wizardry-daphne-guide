@@ -203,7 +203,7 @@
                        *((1-i_rate_table[5])**inherit5num)
                        *((1-i_rate_table[6])**inherit6num));
     
-    const errmsg = "Party size too big!";
+    const errmsg = "Party too big";
 
     document.getElementById("result").value = toobig ? errmsg : prevrate.toFixed(2);
   }
