@@ -168,6 +168,77 @@
     
     </div>
 
+#### Ambush Prevention Calculator
+
+<script>
+  function calcAmbushPreventRate() {
+    const yeka_rate_table = {0: 0, 1: 0.33, 2: 0.36, 3: 0.41, 4: 0.45, 5: 0.50, 6: 0.54, 7: 0.60};
+    const i_rate_table = {0: 0, 1: 0.16, 2: 0.19, 3: 0.23, 4: 0.26, 5: 0.31, 6: 0.35};
+    
+    // Get the values from both inputs, defaulting to 0 if empty
+    const yeka_lev = document.getElementById("yeka_lev").value || 0;
+    const yeka_yn = document.getElementById("yeka_yn").checked;
+    const inherit1num = Number(document.getElementById("i1_num").value) || 0;
+    const inherit2num = Number(document.getElementById("i2_num").value) || 0;
+    const inherit3num = Number(document.getElementById("i3_num").value) || 0;
+    const inherit4num = Number(document.getElementById("i4_num").value) || 0;
+    const inherit5num = Number(document.getElementById("i5_num").value) || 0;
+    const inherit6num = Number(document.getElementById("i6_num").value) || 0;
+    const ynum = yeka_yn ? 1.0 : 0.0;
+
+    // check for error - 6 or fewer total members incl. yeka
+    const partysize = ynum + inherit1num + inherit2num + inherit3num + inherit4num + inherit5num + inherit6num;
+    const toobig = partysize > 6;
+
+    // get yeka's occurrence rate from skill level
+    const yeka_rate = yeka_rate_table[yeka_lev] || 0;
+
+    // calculate the chance of at least one success
+    const prevrate = 100 * (1
+                     - ((1-yeka_rate)**ynum)
+                       *((1-i_rate_table[1])**inherit1num)
+                       *((1-i_rate_table[2])**inherit2num)
+                       *((1-i_rate_table[3])**inherit3num)
+                       *((1-i_rate_table[4])**inherit4num)
+                       *((1-i_rate_table[5])**inherit5num)
+                       *((1-i_rate_table[6])**inherit6num));
+    
+    const errmsg = "Party size too big!";
+
+    document.getElementById("result").value = toobig ? errmsg : prevrate.toFixed(2);
+  }
+
+</script>
+
+<table >
+    <tr><td colspan="2"><b>Yekaterina details:</b></td></tr>
+    <tr><td>
+      <label for:"yeka_yn">Yekaterina in party?: </label>
+      <input type = "checkbox" id="yeka_yn" name="yeka_yn" oninput="calcAmbushPreventRate()">
+      <td>
+      <label for:"yeka_num">Skill level: </label>
+      <input type="number" id="yeka_lev" name="yeka_lev" min="1" max="7" step="1" value="1" size="1" oninput="calcAmbushPreventRate()">
+    </td></tr>
+</table>  
+
+<table>
+    <tr><td colspan="7"><b>Other party members with inherited skill:</b></td></tr>
+    <tr><td>Inherit level:</td><td>Lvl 1</td><td>Lvl 2</td><td>Lvl 3</td><td>Lvl 4</td><td>Lvl 5</td><td>Lvl 6</td></tr>
+    <tr>
+        <td>Members with level:</td>
+        <td><input type="number" id="i1_num" min="0" max="6" step="1" value="0" size="1" oninput="calcAmbushPreventRate()"></td>
+        <td><input type="number" id="i2_num" min="0" max="6" step="1" value="0" size="1" oninput="calcAmbushPreventRate()"></td>
+        <td><input type="number" id="i3_num" min="0" max="6" step="1" value="0" size="1" oninput="calcAmbushPreventRate()"></td>
+        <td><input type="number" id="i4_num" min="0" max="6" step="1" value="0" size="1" oninput="calcAmbushPreventRate()"></td>
+        <td><input type="number" id="i5_num" min="0" max="6" step="1" value="0" size="1" oninput="calcAmbushPreventRate()"></td>
+        <td><input type="number" id="i6_num" min="0" max="6" step="1" value="0" size="1" oninput="calcAmbushPreventRate()"></td>
+    </tr>
+</table>
+<table>
+    <tr><td><b>Chance of preventing ambush:</b></td><td><input size="10" id="result">%</td></tr>
+</table>
+
+
 ## General 
 
 - All General unit passives are covered under the [Passive Skills: Class] page.
