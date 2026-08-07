@@ -10,6 +10,11 @@
 }
 
 .md-typeset .equipment-table table th {
+    overflow-y: auto !important;
+}
+
+
+.md-typeset .equipment-table table th {
     font-size: .70rem;
     min-width: 0;
     white-space: pre;
