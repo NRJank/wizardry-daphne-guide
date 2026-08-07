@@ -9,7 +9,7 @@
     white-space: pre-line;
 }
 
-.md-typeset .equipment-table table th {
+.md-typeset .equipment-table table {
     overflow-y: auto !important;
 }
 
