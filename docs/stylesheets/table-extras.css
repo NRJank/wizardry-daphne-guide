@@ -13,7 +13,8 @@
     font-size: .70rem;
     min-width: 0;
     white-space: pre;
-    position: sticky
+    position: sticky;
+    top: 0;
 }
 
 .md-typeset .equipment-table table td {
