@@ -11,9 +11,9 @@ meow
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: ['1', '2', '3', '4', '5', '6'],
       datasets: [{
         label: '# of Votes',
         data: [12, 19, 3, 5, 2, 3],
