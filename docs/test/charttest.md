@@ -1,5 +1,11 @@
 meow
 
+## sample line chart
+
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
@@ -24,9 +30,3 @@ meow
     }
   });
 </script>
-
-## sample line chart
-
-<div>
-  <canvas id="myChart"></canvas>
-</div>
