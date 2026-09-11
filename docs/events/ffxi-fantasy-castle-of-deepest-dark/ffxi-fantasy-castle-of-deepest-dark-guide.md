@@ -1,6 +1,37 @@
 # FFXI - Fantasy Castle of Deepest Dark
 
-!!! warning "This page is a WIP and frequently updated. Ctrl + F5 to refresh."
+!!! warning "The FFXI Collaboration event has ended. All information below "Before You Begin" refers to details during the active event."   
+
+!!! note "Permanent Castle event changes"   
+    - The castle shows back up on the World Map after talking to the new Blacksmith.  
+        - Floors/Harkens unlocked during the event remain unlocked, maps remain 'explored'.  
+        - The 6th floor bridge is in the 'collapsed' state preventing harken and 7th floor access.   
+    - You can still use pickaxes on Mining spots.   
+        - Rewards seem unchanged.  
+        - Regular picks can still be bought from the Item Shop.   
+        - Golden pickaxes (for x3 rewards) are only available for a limited time until the original Event Jeweler exchange closes.  (1 week after event ended.)   
+    - Exchange:  
+        - Gil is no longer available.  "Worn-down Coin of Ghost Castle" is now acquired from chests.  
+        - New currency can be spent in the "Trader" (Jeweler) exhange in the Village.  
+        - Trader carries one of each base Relic item (Sold Out if you already own them), Steadfast Ankhs, Ore, Junk apporpriate to your grade, and some Codexes of Learning.  
+    - Relic equipment:  
+        - Still upgradable at the Village blacksmith.   
+        - Tavern Trader is gone.  
+        - There's no way to trade between relic material types (e.g., Dagger materials for Katana materials, etc.)  
+            - Collecting exactly the needed items *will take a lot longer*.  That is intentional.  
+            - You may effectively be tier gated out of fully reforging items until you progress in the main story.  
+            - It is unknown if specific materials can be farmed from specific "NMs" or locations. *More info pending*.  
+    - Enemies - FFXI creatures replaced with regular monsters:  
+        - Kindred Demons --> Lesser Demons and Dark Succubi. (Demons are no longer Dark type / susceptible to Aurora weapons. Succubi are.)  
+        - Notorious Monsters --> Greater Demons (also not Dark type).  
+            - appearing at the same locations, apparently with very similar naming, combat behavior, and Relic drops.  
+        - Tonberries have been replaced by Creeping coins (still give Necrophyche drops).  
+        - Fixed event battle locations have been replaced with battles with demons, demi-humans, and undead.  
+        - "Sovereign Kindred Greater Demon" superboss added at the broken bridge.  
+            - He has a 4-digit damage Lazelos that will TPK anyone who doesn't kill him fast enough.  
+            - Delay attack and similar WT debuffs are key.  
+            - Drops 10x Relic material (fragments or attestations), a Bracelet of Hatred, Junk, and event currency.  
+    - Event Dispatches are gone.              
 
 ## Before You Begin
 
@@ -181,7 +212,7 @@
 ## Rewards
 
 1. Completing the 2nd and 3rd runs with any crystals and having saved any of the three friends will reward you with [bondmates](#bondmates).  
-2. Behind the brothers on the altar there is a Bracelet of Hatred that can be farmed. This particular bracelet is fixed 3\* Blue, unlike those from random chest drops that can appear up to 5\* red.  
+2. After the 3rd run, behind the brothers on the altar there is a Bracelet of Hatred that can be farmed. This particular bracelet is fixed 3\* Blue, unlike those from random chest drops that can appear up to 5\* red.  
     
 ??? map "Bracelet of Hatred detail and location"  
 
@@ -306,24 +337,30 @@ Mobs in this event behave differently than monsters elsewhere in the game. It is
 ![](./img/notorious-monster.jpg) ![](./img/notorious-monster-fight.jpg)   
 
 - There are 10 unique Kindred Demons called Notorious Monsters (NM) that randomly spawn in different locations throughout the castle.  See [maps of spawn locations below](#potential-spawning-locations).  
-- NM are much more powerful than the wandering Kindred demons. They are individually named (names taken from FFXI, which [borrowed them from the *Ars Goetia*](https://en.wikipedia.org/wiki/List_of_demons_in_the_Ars_Goetia)) and each has slightly different combat behaviors. 
-- All NM have a large HP pool, start the combat with multiple attacks, and can cast multiple buffs and debuffs rendering their melee attacks able to one-shot any member of your team.  
-- Some will be alone, others will start with several regular mobs, others can summon other monsters and entities throughout the fight.  
+- NM are much more powerful than the wandering Kindred demons.
+- They are individually named (names taken from FFXI, which [borrowed them from the *Ars Goetia*](https://en.wikipedia.org/wiki/List_of_demons_in_the_Ars_Goetia))
+- Each has slightly different combat behaviors:
+    - They will aways lead with the same set of actions (see table below), and will always get at least one first move.
+    - They all look identical before combat so you can't really prepare differently for different NM.
+    - All NM have a large HP pool (scales with player grade), and some cast multiple buffs and debuffs rendering their melee attacks able to one-shot any member of your team.  
+    - Some will be alone, others can summon other monsters and entities throughout the fight.  
 - Defeated NMs always leave a chest and have a high chance of dropping [Attestation or Fragment relic materials](#relic-equipment-and-materials).  
 
 <div class="nofilter-table nosort-table" markdown>
-| Notorious Monster| Details |
-|---|---|
-| Count Bifrons | |
-| Viscount Morax | Summons Water Entity |
-| Baronet Romwe | |
-| Duke Haborym | Debuff you, Self Buff |
-| Marquis Amon | Single target and AOE spells |
-| Marquis Sabnock| Strong melee attack "Quadstrike" |
-| Marquis Allocen | Self Buff and strong melee attack |
-| Grand Duke Batym | Summons Water and Light Entities |
-| Baron Vapula | Crit Poison, Sleep, and AOE spell |
-| Marquis Naberius | |
+
+| Notorious Monster| Weilds | Details                                        |
+|------------------|--------|------------------------------------------------|
+| Count Bifrons    | Sword  | AOE Poison attack                              |
+| Viscount Morax   | Staff  |Summons Water Entity and self buffs             |
+| Baronet Romwe    | Sword  | "Mighty Strikes"                               |
+| Duke Haborym     | Scythe | Debuff you, Self Buff, "Blood Weapon"          |
+| Marquis Amon     | Scythe | Single target and AOE spells                   |
+| Marquis Sabnock  | Sword  | Debuff and Strong melee attack "Quadstrike"    |
+| Marquis Allocen  | Sword  | Debuff you, self buff, and strong melee attack |
+| Grand Duke Batym | Scythe | Summons Water and Light Entities               |
+| Baron Vapula     | Staff  | Poison, Sleep, and AOE spell                   |
+| Marquis Naberius | ?      | ?                                              |
+
 </div>
 
 #### Potential Spawning Locations 
@@ -735,23 +772,26 @@ One notable thing is that while real players can fulfill your requests, there ar
   
 ### Mining for Ore  
 
-- After unlocking Relics and the blacksmith, an interaction outside of the Castle will occur with people discussing mining for ore in the castle.  At this point the item shop in town will sell you pickaxes under Consumable items for 100gp.  There will also be Golden Pickaxes in the Jeweler Exchange for 500 Gil.  
-- In the Castle if you have any type of pickaxe in your inventory (no, the Digging Mattock doesn't count), you can click on any of the multi-colored rock formations in the walls and attempt to mine it for ore. Black formations are 'dead' and cannot be mined. See Mining Maps below.  
-- The rock formation will 'shatter' after a few mining attempts. Leaving and returning to the dungeon will randomly respawn fresh gems to mine.  
-- Pickaxes break every 1-4 uses.  Golden pickaxes don't last any longer but they produce 3x the mining return per use.  
+!!! note "Unlocking"
+    After unlocking Relics and the blacksmith, an interaction outside of the Castle will occur with people discussing mining for ore in the castle.  The item shop will now start selling  Pickaxes under Consumable items for 100gp and Golden Pickaxes will be in the Event Exchange at the Jeweler for 500 Gil.  
+
+- In the Castle with a pickaxe in your inventory (Digging Mattock doesn't count) clicking on any of the multi-colored rock formations in the walls will mine it for ore. See Mining Maps below.  
+- The rock formation will 'shatter' and turn into a 'dead' rock after a few mining attempts. Leaving and returning to the dungeon will randomly respawn fresh gems to mine.  
+- All Pickaxes break every 1-4 uses.  Golden pickaxes don't last any longer.
+- Pickaxe type makes no difference in mining output types, but a Golden Pickaxe produces 3x the mining return per use. There is no other difference.
 - You will always get one type of ore/stone and one type of sellable each mining attempt:  
     - Enhancement ore: low, mid, high, fine, and silver grade  
     - Ouroboros Ore (see Relic Material list above)  
     - Alteration and refinement stones (includig *very rare* LFAS / FAS) ranging from 1-5 star quality.  
-    - Sellables: mainly translucent gems  
+    - Sellables: Translucent gems  
 - Tips:  
     - Mining products are not limited by player progress or rank.  
-        - This is *one of the few free-to-play ways in the game to get early access to higher levels of ore* than you can normally find.  
-        - This is especially valuable if you are Reforging Relic items to material Ranks higher than your current main story progress allows, and your high-level ore access is limited.  
-        - LFAS and FAS are very rare, but this is one of the only practical ways to farm them in the game.  
+        - You can get higher levels of ore than your main story progress allows.   
+        - LFAS and FAS are very rare mining rewards, but this is the first practical way to farm them in the game.  
     - Keep Mining Pickaxes in storage to quickly refill from the inventory screen outside the castle without heading back to town.  
-    - At the start it's probably best to stick to as many regular pickaxes as you can carry.  Later, after cleared out the Exchnage shop, switch to Golden ones to triple your mining output. (Farm Gil by [exchanging Relic materials back and forth at the Trader](#material-trading).)  
-    - You can jump between Zone 2, 4, an 5 for enemy-free mining spots by the Harkens. Set check marks next to the spots, and you can quickly auto-walk and auto-exit through the set.  
+    - At the start stick to regular pickaxes.  Later, after clearing out the Exchnage shop, switch to Golden ones to triple your mining output.
+        - Farm Gil by [exchanging Relic materials back and forth at the Trader](#material-trading).)  
+    - Enemy-free mining spots: Zone 2 (two spots), 4 (one spot), an 5 (two spots) from the Harkens. Set check marks next to the spots, then auto-walk, mine, auto-exit.  
 
 ??? map "Mining Maps"
     Mining locations marked with checkmarks below.
