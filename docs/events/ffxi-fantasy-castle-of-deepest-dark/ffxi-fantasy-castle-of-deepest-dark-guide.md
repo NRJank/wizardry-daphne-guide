@@ -514,7 +514,7 @@ Harkens in the event can provide both the basic blessings and unique Event bless
     - Blessing types are fixed. L/FASing them keeps blessing types the same and just rerolls the values, similar to Master Rings from class trials.  
     - Enhancement:  
         - Limited by item level:  Level 0 (Bronze) +5, Level 1 (Iron) +10, Level 2 (Steel) +15, Levels 3 and 4 (Ebon and Silver) +20.  
-        - Costs for all levels follow the Silver (Special) item tables. (2.4M gp for 2H Sword, ~1M for the rest).  
+        - Costs for all levels follow the Silver (Special) item tables. (2.4M gp for 2H Sword and Bow, ~1M for the rest).  
         - Blessings and increases all follow the Silver level table ranges for 1H and 2H items (even if you enhance at lower relic level).  
         - Reforging has no affect on enhancement level or blessings.  
     - Remaking:  
@@ -777,6 +777,7 @@ One notable thing is that while real players can fulfill your requests, there ar
 !!! note "Unlocking"
     After unlocking Relics and the blacksmith, an interaction outside of the Castle will occur with people discussing mining for ore in the castle.  The item shop will now start selling  Pickaxes under Consumable items for 100gp and Golden Pickaxes will be in the Event Exchange at the Jeweler for 500 Gil.  
 
+![](./img/mine_spot.jpg){align=right width=350 height=auto}  
 - In the Castle with a pickaxe in your inventory (Digging Mattock doesn't count) clicking on any of the multi-colored rock formations in the walls will mine it for ore. See Mining Maps below.  
 - The rock formation will 'shatter' and turn into a 'dead' rock after a few mining attempts. Leaving and returning to the dungeon will randomly respawn fresh gems to mine.  
 - All Pickaxes break every 1-4 uses.  Golden pickaxes don't last any longer.

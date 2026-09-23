@@ -72,6 +72,10 @@ Cursed wheel, farm some more of the Insect bait, and head to route 6 again after
 
 Capture three large trout. Upon doing so, Lulunarde will comment at the pier that you've completed the request with Large Trout. This doesn't need to be done all in one go. Return to the Adventurer's Guild to turn it in. Completing this will give you an additional 50k Gold. You will also obtain an achievement for impressing Hart.
 
+## Fishing Calculator
+
+Community members have built a dedicated [site](https://wizardry.daphne-fishingcalc.workers.dev/) that includes more in-depth information and additional tools. 
+
 ## Fish Details
 
 !!! warning "Whopper Spinefoot"
@@ -85,7 +89,7 @@ Capture three large trout. Upon doing so, Lulunarde will comment at the pier tha
 
     === "Medium"
         - Depth Preference: 10m
-        - Bait Preference: Deep Groundbait, Abyssal Insect Larva, Dragonfly Larva
+        - Bait Preference: Abyssal Insect Larva, Dragonfly Larva
         - Distance Preference: Any
         - Direction Preference: Any
         - Fight Characteristics: Can frenzy, but for very short durations.
@@ -108,7 +112,7 @@ Capture three large trout. Upon doing so, Lulunarde will comment at the pier tha
 
     === "Large"
         - Depth Preference: 5m
-        - Bait Preference: Deep Groundbait, Abyssal Insect Larva, Dragonfly Larva
+        - Bait Preference: Abyssal Insect Larva, Dragonfly Larva
         - Distance Preference: Any, but moreso Close or Middle
         - Direction Preference: Any
         - Fight Characteristics: Moves side to side, can Frenzy.
@@ -131,7 +135,7 @@ Capture three large trout. Upon doing so, Lulunarde will comment at the pier tha
 
     === "Large"
         - Depth Preference: 5m
-        - Bait Preference: Deep Groundbait, Abyssal Insect Larva, Dragonfly Larva
+        - Bait Preference: Abyssal Insect Larva, Dragonfly Larva
         - Distance Preference: Far
         - Direction Preference: Any, but a little bit left.
         - Fight Characteristics: Nothing of note, can Frenzy.
@@ -154,7 +158,7 @@ Capture three large trout. Upon doing so, Lulunarde will comment at the pier tha
         
     === "Large"
         - Depth Preference: 15m
-        - Bait Preference: Deep Groundbait, Abyssal Insect Larva, Dragonfly Larva
+        - Bait Preference: Abyssal Insect Larva, Dragonfly Larva
         - Distance Preference: Any
         - Direction Preference: Right
         - Fight Characteristics: Just pulls straight, doesn't really frenzy
@@ -177,7 +181,7 @@ Capture three large trout. Upon doing so, Lulunarde will comment at the pier tha
 
     === "Large"
         - Depth Preference: 13m
-        - Bait Preference: Light Groundbait, Chum Mix, Abyssal Insect Larva
+        - Bait Preference: Abyssal Insect Larva
         - Distance Preference: Far
         - Direction Preference: Any
         - Fight Characteristics: Moves side to side, occasionally Frenzies.
@@ -200,7 +204,7 @@ Capture three large trout. Upon doing so, Lulunarde will comment at the pier tha
 
     === "Large"
         - Depth Preference: 15m
-        - Bait Preference: Light Groundbait, Abyssal Insect Larva, Chum Mix
+        - Bait Preference: Abyssal Insect Larva
         - Distance Preference: Any, but moreso Close or Middle
         - Direction Preference: Any
         - Fight Characteristics: Occasionally Frenzies.
@@ -230,9 +234,9 @@ Capture three large trout. Upon doing so, Lulunarde will comment at the pier tha
 
 !!! warning "Golden Catfish"
 
-        - Depth Preference: 15m
-        - Bait Preference: Abyssal Insect Larva, Dragonfly Larva
-        - Distance Preference: Any
-        - Direction Preference: Any, but moreso to the left.    
-        - Fight Characteristics: Moves side to side, frenzies often.
+    - Depth Preference: 15m
+    - Bait Preference: Abyssal Insect Larva, Dragonfly Larva
+    - Distance Preference: Any
+    - Direction Preference: Any, but moreso to the left.    
+    - Fight Characteristics: Moves side to side, frenzies often.
 
