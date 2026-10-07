@@ -1,8 +1,5 @@
 # Corrosion Sentries 
 
-!!! warning "Work in Progress" 
-    - DM or ping @Lightbearer on the Discord for any corrections or feedback.
-
 ## Corrosion Sentry Guide
 
 !!! warning "Introduction" 
@@ -782,8 +779,8 @@
         ![](./img/corrosion-golem/golem-corr-9-fortress-2F-minor-harken-3F-west.jpg)
         </div>
 
-        - Push the golem to the right to break the wall to access the adjacent room
-        - The next room has the automaton and mini-quest 
+        - Push the golem to the right to break the wall to gain access to the adjacent room
+        - The next room has the automaton and mini-quest item   
 
     ??? warning "Cursed Wheel Registration"
 
@@ -801,24 +798,31 @@
             
             - From the Zone 7 Harken proceed through Zones 8-10 until you reach Zone 10, which has a fixed map layout
             - North of the stairs to Zone 9 there will be a room with a golem in it. Push the golem to the right to break the wall
-            - In the adjacent room examine the skeleton, which will spawn an automaton and a map on the floor nearby
-            - The map marks the locations of 3 winding keys on the previous floors (Zones 8 and 9) 
-            - Return to Zone 10 after collecting the winding keys and interact with the automaton 
-            - Exit the room and walk into the hallway with the corrosion sentry. The automaton will activate and the corrosion sentry will give chase > "Not Spotted" flag triggered
+            - In the now-accessible adjacent room examine the skeleton, which will spawn nearby items: an automaton and a map  
+            - Interacting with the automaton tells you that it needs keys or something for activation
+            - Interacting with the map will then give you the locations of 3 winding keys by marking their locations on the previous floors (Zones 8 and 9) on your map with "!" symbols    
+            - Backtrack to Zones 8 and 9 to collect the winding keys by looking for them on your map.  see the "Mini-Quest: Winding Keys" note below.
+                - Be warned some enemies can have respawned and you'll probably have to dodge some Combat sentries again.  
+            - Return to the room in Zone 10 after collecting the winding keys and interact with the automaton again
+            - Exit the room and walk into the hallway with the corrosion sentry. On approaching the sentry the automaton will automatically activate and the corrosion sentry will give chase > "Not Spotted" flag triggered
             - To register continue north to the last room in Zone 10, drop down the hole to Zone 9, and exit via the Zone 9 Harken (Fortress 2F Minor Harken) across the hallway
 
             Notes
             
-            - Danger! Do not enter the hallway with the corrosion sentry to avoid being "Spotted
-            - Corrosion sentry [8] can be registered in the same run in the last room in Zone 10
+            - Danger! Do not enter the hallway with the corrosion sentry to avoid being "Spotted  
+            - Corrosion sentry [8] can be registered in the same run in the last room in Zone 10  
 
     ??? note "Mini-Quest: Winding Keys"
     
         === "Overview"
         
-            - The locations of the 3 winding keys are marked on your map with a yellow "!" symbol
-            - The keys are always at the same coordinates even with different map variations 
-            - There are 2 keys in Zone 8 and 1 key in Zone 9
+            - After viewing the map item in the room on Zone 10, the locations of the 3 winding keys are marked on your Zone 8 and 9 maps with a yellow "!" symbol
+            - There are 2 keys in Zone 8 and 1 key in Zone 9  
+            - You must have explored those parts of the maps to see the "!" symbol  
+            - [Abyss Maps have variations](/mechanics/map-variations.md). There are too many combinations to show them all below. 
+                - The keys are always at the same map coordinates (each noted below) no matter your Variation.  
+
+            !!! warning "This is the only time in the game so far where a story feature does not move with map variations. Use the coordinates."
 
         === "Winding Key 1 - Zone 9"
         
@@ -827,7 +831,8 @@
             </div>
 
             - Located in Zone 9 at x:7, y:12
-            - There is a roaming sentry circling the outer area
+            - This map tile can swap and may not match what's shown above.
+            - In variation shown there is a roaming sentry circling the outer area
 
         === "Winding Key 2 - Zone 8"
         
@@ -836,7 +841,8 @@
             </div>
 
             - Located in Zone 8 at x:7, y:19
-            - Next to the room with a golem and 3 breakable walls
+            - This map tile can swap and may not match what's shown above.
+            - In variation shown it is next to the room with a golem and 3 breakable walls
             
         === "Winding Key 3 - Zone 8"
         
@@ -985,15 +991,16 @@
         ![](./img/corrosion-golem/golem-corr-11-fortress-3rd-floor-arrival-1F-southwest.jpg)
         </div>
 
-        - Push the middle golem (1) down
-        - Push the left-hand golem (2) to the right, which will crush the corrosion sentry 
-        - Push the far right-hand golem (3) down, which will break a wall and allow access to the Zone 9 stairs
-        - Danger! There are 3 sentries (blue ★) in the area
+        - Push the middle golem (1) down, crushing the middle combat sentry  
+        - Push the left-hand golem (2) to the right, which will crush eastern combat sentry 
+        - Push the far right-hand golem (3) down, which will break a wall and create a path to the Zone 9 stairs that does not trigger the corrosion sentry
+        - Danger! There are 3 sentries (blue ★) in the area. Watch the fields of view that can change as you move the golems.
 
     ??? warning "Cursed Wheel Registration"
     
         === "Spotted"
-            - Automatically "Spotted" on first run 
+            - Must walk through the room and be "Spotted" to reach the stairs on first run. 
+            - Note: There are inconsistent reports that attacking the corrosion sentry from behind or the side can remove the sentry without triggering the "Spotted" condition.  In that case reaching the Fortress 3rd Floor Arrival (Zone 10 Fountain) may register a "Not Spotted" condition. A killed Corrosion sentry respawns on next dungeon entry, so this would make it possible to register both "Spotted" and "Not Spotted" on your first run before moving any golems.
             
         === "Not Spotted"
         
@@ -1007,14 +1014,14 @@
             
             - From the Zone 9 Harken go south and follow the path to Zone 8 
             - Proceed to the end of Zone 8. This room has a fixed location and will always be in the bottom-left corner
-            - See Golem Directions to crush the corrosion sentry > "Not Spotted" flag triggered
+            - See Golem Directions to open a safe path around the corrosion sentry > "Not Spotted" flag triggered
             - Exit the room through the newly created hole in the wall
             - To register continue through Zone 9 to the Zone 10 Fountain (Fortress 3rd Floor Arrival)
             - To exit use the southern teleport tile in Zone 10 to warp to the Zone 9 Harken
 
             Notes
 
-            - Danger! There are 3 sentries in the room with the corrosion sentry
+            - Danger! There are 3 sentries (blue ★) in the area. Watch the fields of view that can change as you move through the room.
 
     ??? note "Cursed Wheel Entry"
     
